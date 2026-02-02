@@ -5,11 +5,17 @@ export type Project = {
   tags: string[];
   link: string;
   featured: boolean;
+  preview?: {
+    type: "image" | "video";
+    src: string;
+    alt: string;
+    poster?: string;
+  };
 };
 
 export const projects: Project[] = [
   {
-    name: "Aether-3D",
+    name: "Aether 3D",
     tagline: "Transforms data into a living 3D visual experience.",
     description:
       "Interactive 3D dashboard where entities evolve with real-time metrics. Built for visual storytelling and control-driven exploration.",
@@ -24,6 +30,12 @@ export const projects: Project[] = [
     ],
     link: "https://github.com/NFMdev/aether-3D",
     featured: true,
+    preview: {
+      type: "video",
+      src: "/previews/aether-3D.webm",
+      alt: "Aether-3D preview",
+      poster: "/previews/aether-3D.webp",
+    },
   },
   {
     name: "Crime Data Ingestion & Analytics (CDIA)",
@@ -39,20 +51,30 @@ export const projects: Project[] = [
       "Elasticsearch",
       "Docker",
     ],
-    link: "https://github.com/NFMdev/CDIA-XCI-project",
+    link: "https://github.com/NFMdev/cdia",
     featured: true,
+    preview: {
+      type: "image",
+      src: "/previews/cdia.webp",
+      alt: "CDIA preview",
+    },
   },
   {
-    name: "cv-project",
+    name: "My CV Web App",
     tagline: "Small front-end web app to present my CV.",
     description:
       "A clean CV experience with charts and UI components, built as a lightweight showcase.",
     tags: ["React 18", "TypeScript", "Vite", "MUI", "Recharts"],
-    link: "https://github.com/NFMdev/sembo-cv-project",
+    link: "https://github.com/NFMdev/cv-web-app",
     featured: true,
+    preview: {
+      type: "image",
+      src: "/previews/cv.png",
+      alt: "CV project preview",
+    },
   },
   {
-    name: "supermarket-api",
+    name: "Supermarket API",
     tagline: "API that generates optimized shopping routes (AI WIP).",
     description:
       "Backend API for product list → route planning. Uses PostgreSQL + MongoDB, JWT auth, and DTO mapping.",
