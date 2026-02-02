@@ -55,7 +55,7 @@ export const projects: Project[] = [
     featured: true,
     preview: {
       type: "image",
-      src: "/previews/cdia.webp",
+      src: "/previews/cdia.png",
       alt: "CDIA preview",
     },
   },
