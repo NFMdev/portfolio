@@ -1,3 +1,7 @@
+import cdiaImg from "../../public/previews/cdia.png";
+import cvImg from "../../public/previews/cv.png";
+import aether3DVideo from "../../public/previews/aether-3D.webm";
+
 export type Project = {
   name: string;
   tagline: string;
@@ -32,9 +36,9 @@ export const projects: Project[] = [
     featured: true,
     preview: {
       type: "video",
-      src: "/previews/aether-3D.webm",
+      src: aether3DVideo,
       alt: "Aether-3D preview",
-      poster: "/previews/aether-3D.webp",
+      poster: aether3DVideo,
     },
   },
   {
@@ -55,7 +59,7 @@ export const projects: Project[] = [
     featured: true,
     preview: {
       type: "image",
-      src: "/previews/cdia.png",
+      src: cdiaImg,
       alt: "CDIA preview",
     },
   },
@@ -69,7 +73,7 @@ export const projects: Project[] = [
     featured: true,
     preview: {
       type: "image",
-      src: "/previews/cv.png",
+      src: cvImg,
       alt: "CV project preview",
     },
   },
