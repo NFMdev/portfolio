@@ -23,15 +23,25 @@ export default function Contact() {
           </a>
           <a
             className="rounded-full border border-white/20 px-4 py-2 text-white/80 transition hover:border-white/40 hover:bg-white/[0.08]"
-            href="mailto:your@email.com"
+            href="mailto:nicofioritom@gmail.com"
           >
             Email
           </a>
           <a
             className="rounded-full border border-white/20 px-4 py-2 text-white/80 transition hover:border-white/40 hover:bg-white/[0.08]"
-            href="#"
+            href="https://www.linkedin.com/in/nico-fiorito"
+            target="_blank"
+            rel="noreferrer"
           >
-            LinkedIn (add)
+            LinkedIn
+          </a>
+          <a
+            className="rounded-full border border-white/20 px-4 py-2 text-white/80 transition hover:border-white/40 hover:bg-white/[0.08]"
+            href="https://nfmdev.github.io/cv-web-app"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Web CV
           </a>
         </div>
       </div>
