@@ -1,4 +1,4 @@
-import { useRef, type FocusEvent } from "react";
+import { useRef, type FocusEvent, type PointerEvent } from "react";
 import type { Project } from "../data/projects";
 
 type ProjectCardProps = {
@@ -40,20 +40,28 @@ export default function ProjectCard({
     resetPreview();
   };
 
+  const handlePointerDown = (event: PointerEvent<HTMLElement>) => {
+    if (event.pointerType === "mouse") {
+      return;
+    }
+    event.currentTarget.focus();
+  };
+
   return (
     <article
       tabIndex={0}
       aria-label={`${project.name} featured project`}
       onMouseEnter={playPreview}
       onMouseLeave={resetPreview}
+      onPointerDown={handlePointerDown}
       onFocus={playPreview}
       onBlur={handleBlur}
       className="group flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/30 hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/40 focus-within:ring-2 focus-within:ring-cyan-400/40 transition-transform hover:scale-[1.015] focus-within:scale-[1.015] hover:z-10 focus-within:z-10"
     >
       <div>
         {preview ? (
-          <div className="mb-4 hidden md:block">
-            <div className="mx-auto aspect-video max-h-0 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] opacity-0 translate-y-2 blur-[1px] transition-[max-height,opacity,transform,filter] duration-200 ease-out motion-reduce:transition-none motion-reduce:transform-none motion-reduce:blur-0 group-hover:max-h-[220px] group-hover:opacity-100 group-hover:translate-y-0 group-hover:blur-0 group-focus-within:max-h-[240px] group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:blur-0">
+          <div className="mb-4">
+            <div className="mx-auto aspect-video max-h-0 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] opacity-0 translate-y-2 blur-[1px] transition-[max-height,opacity,transform,filter] duration-200 ease-out motion-reduce:transition-none motion-reduce:transform-none motion-reduce:blur-0 md:group-hover:max-h-[220px] md:group-hover:opacity-100 md:group-hover:translate-y-0 md:group-hover:blur-0 group-focus-within:max-h-[240px] group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:blur-0">
                 <div className="flex h-full w-full items-center justify-center">
                   {preview.type === "image" ? (
                     <img
