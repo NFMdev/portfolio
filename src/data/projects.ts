@@ -1,6 +1,6 @@
-import cdiaImg from "../../public/previews/cdia.png";
+import cdiaPreview from "../../public/previews/cdia.webm";
 import cvImg from "../../public/previews/cv.png";
-import aether3DVideo from "../../public/previews/aether-3D.webm";
+import aether3DPreview from "../../public/previews/aether-3D.webm";
 
 export type Project = {
   name: string;
@@ -36,9 +36,9 @@ export const projects: Project[] = [
     featured: true,
     preview: {
       type: "video",
-      src: aether3DVideo,
+      src: aether3DPreview,
       alt: "Aether-3D preview",
-      poster: aether3DVideo,
+      poster: aether3DPreview,
     },
   },
   {
@@ -58,9 +58,10 @@ export const projects: Project[] = [
     link: "https://github.com/NFMdev/cdia",
     featured: true,
     preview: {
-      type: "image",
-      src: cdiaImg,
+      type: "video",
+      src: cdiaPreview,
       alt: "CDIA preview",
+      poster: cdiaPreview,
     },
   },
   {
